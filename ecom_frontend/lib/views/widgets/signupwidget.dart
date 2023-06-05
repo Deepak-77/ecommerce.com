@@ -76,7 +76,7 @@ class _SignUpPageWidgetState extends State<SignUpPageWidget> {
                               text: 'Signup',
                               width: double.infinity,
                               color: Colors.purpleAccent,
-                              height: 50,
+                              height: 56,
                               navigation: () {
                                 context.read<SignupCubit>().postsignUp(
                                     email: email.text,

@@ -13,6 +13,7 @@ class AuthServices {
       );
       return signUpResModelFromJson(response.data!);
     } on DioError catch (e) {
+      print(e.response);
       throw 'e';
     }
   }

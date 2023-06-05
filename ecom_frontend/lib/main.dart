@@ -1,8 +1,10 @@
 import 'package:ecom_frontend/common/widgets/custom_button.dart';
 import 'package:ecom_frontend/common/widgets/customtextform_filed.dart';
 import 'package:ecom_frontend/cubit/signup/signupCubit.dart';
+import 'package:ecom_frontend/services/repository/login_repo.dart';
 import 'package:ecom_frontend/services/repository/signup_repo.dart';
 import 'package:ecom_frontend/views/screen/login_page.dart';
+import 'package:ecom_frontend/views/screen/splash_scrren.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -18,6 +20,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiRepositoryProvider(
       providers: [
+        RepositoryProvider(create: (context) => LoginRepo()),
         RepositoryProvider(create: (context) => SignUpRepository()),
       ],
       child: MaterialApp(
@@ -25,7 +28,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: const LoginPage(),
+        home: const SplashScreenWidget(),
       ),
     );
   }
